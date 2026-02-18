@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="537.0" prefWidth="922.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.juan.PrimaryController">
+   <children>
+      <Label text="Administracion de la biblioteca">
+         <font>
+            <Font name="System Bold Italic" size="34.0" />
+         </font>
+      </Label>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="70.0">
+               <children>
+                  <Button fx:id="btnFiltroReservados" mnemonicParsing="false" text="Libros Reservados" />
+                  <Button fx:id="btnFiltroPrestados" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Libros Prestados" />
+                  <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" text="Genero:" />
+                        <ComboBox fx:id="selectGenero" prefWidth="150.0">
+                           <VBox.margin>
+                              <Insets bottom="14.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Buscar por estudiante:" />
+                        <TextField fx:id="searchEstudiante" prefHeight="25.0" prefWidth="168.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <TableView fx:id="TablaLibros" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="ISBN" />
+                <TableColumn prefWidth="75.0" text="Titulo" />
+                  <TableColumn prefWidth="75.0" text="Autor/es" />
+                  <TableColumn prefWidth="75.0" text="Genero" />
+                  <TableColumn prefWidth="75.0" text="Año" />
+                  <TableColumn prefWidth="75.0" text="Estado" />
+                  <TableColumn minWidth="150.0" prefWidth="75.0" text="Estudiante con libro" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="53.0" prefWidth="168.0">
+               <children>
+                  <Label text="Titulo" />
+                  <TextField fx:id="tituloLibroField" prefHeight="25.0" prefWidth="168.0" />
+                  <Label maxWidth="1.7976931348623157E308" text="Genero:" />
+                  <ComboBox fx:id="selectGeneroLibro" maxWidth="1.7976931348623157E308" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="14.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </children>
+            </VBox>
+            <HBox spacing="10.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Autor:(Enter para añadir)" />
+                        <TextField fx:id="autorField" onKeyReleased="#anadirAutor" prefHeight="25.0" prefWidth="100.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="btnEliminarAutor" mnemonicParsing="false" onMouseClicked="#eliminarAutorLista" text="Eliminar Autor seleccionado" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="autorSelectLbl" text="Autor/es del libro:" />
+                        <ListView fx:id="listaAutores" onMouseClicked="#seleccionarAutor" prefHeight="200.0" prefWidth="200.0" />
+                        <Label fx:id="autorSelectLbl1" layoutX="10.0" layoutY="93.0" text="Autor x seleccionado " />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="Fecha publicacion:" />
+                  <DatePicker fx:id="fechaPublicacion" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="107.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnEditarLibro" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Editar" />
+                  <Button fx:id="btnEliminarLibro" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar" />
+                  <Button fx:id="btnAnadirLibro" layoutX="10.0" layoutY="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Añadir" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</VBox>
