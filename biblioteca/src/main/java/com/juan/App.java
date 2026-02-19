@@ -1,11 +1,9 @@
 package com.juan;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -14,10 +12,9 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("login_registro"), 640, 480);
+        scene = new Scene(loadFXML("/com/juan/component_login_registro/login_registro"));
         stage.setScene(scene);
         stage.show();
     }
