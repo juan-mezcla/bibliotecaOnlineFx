@@ -1,0 +1,114 @@
+/* Contenedor Principal */
+.root {
+    -fx-background-color: #f0f2f5;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Encabezado */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* El título "Biblioteca" */
+.root > .children > .hbox > .label {
+    -fx-text-fill: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+/* Botón Cerrar Sesión (Estilo peligro/salir) */
+#btnMisLibros1 {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+}
+#btnMisLibros1:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* TABLA DE LIBROS */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-size: 35;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #3498db;
+}
+
+/* PANEL LATERAL (Detalles del libro) */
+/* Vamos a hacer que la VBox de la derecha parezca una tarjeta */
+.hbox > .vbox:last-child {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Imagen de portada */
+#portadaLibro {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 3);
+}
+
+/* Título del libro seleccionado */
+#tituloLibro {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10 0;
+}
+
+/* Botones de acción (Reservar, Devolver, etc.) */
+.button {
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s;
+}
+
+#btnReservar {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#btnDevolver {
+    -fx-background-color: #f1c40f;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+#btnPrestamo {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+}
+
+/* Campos de búsqueda y combo */
+.text-field, .combo-box {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #bdc3c7;
+}
+
+/* Lista de autores pequeña */
+#listaAutores {
+    -fx-background-radius: 5;
+    -fx-border-color: #eeeeee;
+    -fx-font-size: 11px;
+}
+
+#btnLibrosDisponibles, #btnMisLibros {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-padding: 8 20;
+    -fx-background-radius: 5;
+}

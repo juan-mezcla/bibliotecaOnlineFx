@@ -1,0 +1,113 @@
+/* Contenedor Principal */
+.root {
+    -fx-background-color: #f8f9fa;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Encabezado Superior */
+.hbox:first-child {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20;
+    -fx-background-radius: 0 0 15 15;
+}
+
+.hbox:first-child .label {
+    -fx-text-fill: white;
+}
+
+/* Botón Cerrar Sesión */
+.hbox:first-child .button {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+}
+
+.hbox:first-child .button:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Área de Filtros */
+#btnFiltroReservados, #btnFiltroPrestados {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-text-fill: #3498db;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-font-weight: bold;
+}
+
+#btnFiltroReservados:hover, #btnFiltroPrestados:hover {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Tabla de Administración */
+.table-view {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dcdde1;
+    -fx-padding: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+/* Formulario Inferior (Panel de Edición) */
+.hbox:last-child {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 15;
+}
+
+/* Estilo para los campos del formulario */
+.text-field, .combo-box, .date-picker {
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Botones CRUD */
+#btnAnadirLibro {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#btnEditarLibro {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#btnEliminarLibro {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Botón de Imagen */
+#btnSeleccionarImagen {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+}
+
+/* Listado de Autores */
+#listaAutores {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}

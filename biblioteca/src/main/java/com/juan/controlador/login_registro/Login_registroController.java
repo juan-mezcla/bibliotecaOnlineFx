@@ -29,35 +29,22 @@ public class Login_registroController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // CORREGIDO: Sin la carpeta /view/
+        
         cargarSubVista("/com/juan/component_login/view_login.fxml");
     }
 
     @FXML
     void verInicioSesion(MouseEvent event) {
-        // CORREGIDO: Sin la carpeta /view/
+        
         cargarSubVista("/com/juan/component_login/view_login.fxml");
     }
 
     @FXML
     void verRegistroSesion(MouseEvent event) {
-        // CORREGIDO: Sin la carpeta /view/
+        
         cargarSubVista("/com/juan/component_registro/view_registro.fxml");
     }
-
-    // Añade esto a Login_registroController.java
-@FXML
-void mostrarPassword(MouseEvent event) {
-    // Tu lógica para mostrar contraseña
-    System.out.println("Clic en mostrar password");
-}
-
-@FXML
-void comprobarUsuario(MouseEvent event) {
-    // Tu lógica de login
-    System.out.println("Intentando iniciar sesión...");
-}
-
+    
     private void cargarSubVista(String fxmlPath) {
         try {
             panel.getChildren().clear();
@@ -66,7 +53,7 @@ void comprobarUsuario(MouseEvent event) {
             
             // VALIDACIÓN: Evita que el programa explote si la ruta está mal
             if (fxmlUrl == null) {
-                System.err.println("❌ ERROR: No se encontró el archivo exacto en: " + fxmlPath);
+                System.err.println("ERROR: No se encontró el archivo exacto en: " + fxmlPath);
                 return; 
             }
             
@@ -75,7 +62,7 @@ void comprobarUsuario(MouseEvent event) {
             panel.getChildren().add(vista);
             
         } catch (IOException e) {
-            System.err.println("❌ Error al cargar la sub-vista: " + fxmlPath);
+            System.err.println("Error al cargar la sub-vista: " + fxmlPath);
             e.printStackTrace();
         }
     }

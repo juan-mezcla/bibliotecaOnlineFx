@@ -110,7 +110,7 @@ public class DaoBlibliotecaImpl implements DaoBliblioteca{
     }
 
     @Override
-    public List<Libro> obteneLibros() {
+    public List<Libro> obtenerLibros() {
         EntityManager em = JpaUtil.getEntityManager();
         
         List<Libro> libros=null;

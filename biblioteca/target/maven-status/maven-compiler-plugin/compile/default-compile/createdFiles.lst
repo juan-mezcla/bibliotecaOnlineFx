@@ -1,8 +1,0 @@
-com\juan\controlador\login_registro\Login_registroController.class
-com\juan\model\Libro.class
-com\juan\model\User.class
-com\juan\dao\JpaUtil.class
-com\juan\dao\DaoBlibliotecaImpl.class
-com\juan\dao\DaoBliblioteca.class
-module-info.class
-com\juan\App.class

@@ -16,7 +16,7 @@ public interface DaoBliblioteca {
     User seleccionarUser(int idUser);
     Libro seleccionarLibro(String ISBN);
 
-    List<Libro> obteneLibros();
+    List<Libro> obtenerLibros();
     List<Libro> obtenerLibrosPrestados();
     List<Libro> obtenerLibrosReservados();
     List<Libro> obtenerLibroPorGenero(String genero);

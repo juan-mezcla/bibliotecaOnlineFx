@@ -10,8 +10,11 @@ module com.juan {
     
     // Para el cargador de FXML (App principal)
     opens com.juan to javafx.fxml;
-    
+    opens com.juan.controlador.admin to javafx.fxml;
+    opens com.juan.controlador.estudiante to javafx.fxml;
     opens com.juan.controlador.login_registro to javafx.fxml;
 
     exports com.juan;
+    exports com.juan.controlador.admin;
+    exports com.juan.controlador.login_registro;
 }

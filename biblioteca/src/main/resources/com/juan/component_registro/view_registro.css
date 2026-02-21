@@ -1,0 +1,83 @@
+/* Contenedor principal (VBox) */
+.root {
+    -fx-background-color: #f4f7f6; /* Un gris muy claro/azulado de fondo */
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Título del registro */
+#TituloRegistro {
+    -fx-text-fill: #2c3e50; /* Azul oscuro elegante */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+/* Estilo para todas las etiquetas (Label) */
+.label {
+    -fx-text-fill: #34495e;
+}
+
+/* Campos de texto (TextField) */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-padding: 8 10;
+    -fx-font-size: 13px;
+    -fx-transition: all 0.3s;
+}
+
+/* Efecto cuando el usuario hace clic en un campo */
+.text-field:focused {
+    -fx-border-color: #3498db; /* Azul brillante */
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.3), 10, 0, 0, 0);
+}
+
+/* Estilo para el ChoiceBox (Tipo de usuario) */
+.choice-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 2;
+}
+
+.choice-box:showing {
+    -fx-border-color: #3498db;
+}
+
+/* CheckBox de mostrar contraseña */
+.check-box {
+    -fx-cursor: hand;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #3498db;
+}
+
+/* Botón de Registro */
+#btnRegistro {
+    -fx-background-color: #2ecc71; /* Verde esmeralda */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 204, 113, 0.4), 10, 0, 0, 4);
+}
+
+#btnRegistro:hover {
+    -fx-background-color: #27ae60; /* Verde más oscuro al pasar el ratón */
+    -fx-translate-y: -2px; /* Efecto de elevación */
+}
+
+#btnRegistro:pressed {
+    -fx-background-color: #1e8449;
+    -fx-translate-y: 0px;
+}
