@@ -1,43 +1,66 @@
 package com.juan.model;
+
 import javax.persistence.*; 
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Entidad Libro: Representa un libro en el sistema de biblioteca.
+ * Se ha diseñado para gestionar estados de préstamo y reserva de forma simultánea.
+ */
 @Entity
 @Table(name = "libros")
 public class Libro {
 
     @Id
-    private String isbn;
+    private String isbn; // Clave primaria única.
     private String titulo;
     private String genero;
 
     @Lob
     @Column(columnDefinition = "LONGBLOB") 
-    private byte[] imagen;
+    private byte[] imagen; // Almacena la portada en formato binario.
 
     private LocalDate fechaPublicacion;
-    private LocalDate limitePrestamo;
+    private LocalDate limitePrestamo; // Fecha en la que el poseedor actual debe devolver el libro.
 
     @CollectionTable(name = "libro_autores", joinColumns = @JoinColumn(name = "libro_id"))
     @Column(name = "autor")
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> autores;
+    private List<String> autores; // Relación 1-N para autores sin necesidad de crear otra entidad.
 
+    /* * Banderas de estado: 
+     * Permiten filtrar rápidamente en la base de datos sin cargar los objetos User.
+     */
     private boolean reservado;
     private boolean prestado;
 
+    /**
+     * CAMPO CLAVE 1: El Poseedor Actual.
+     * Representa al usuario que tiene el libro FÍSICAMENTE.
+     * Al estar separado del campo de reserva, este usuario puede mantener su 
+     * sesión de "Mis Libros" hasta que pulse "Devolver", aunque otro lo reserve.
+     */
     @ManyToOne
     @JoinColumn(name = "id_estudiante")
     private User estudiante;
 
+    /**
+     * CAMPO CLAVE 2: El Solicitante en Espera.
+     * Esta es la solución al problema anterior. Aquí guardamos al Usuario B que pulsa "Reservar".
+     * Así, el sistema sabe que el libro tiene dos dueños en diferentes contextos:
+     * - Estudiante: Lo está leyendo.
+     * - UsuarioReserva: Está haciendo cola para leerlo.
+     */
     @ManyToOne
-@JoinColumn(name = "id_reserva")
-private User usuarioReserva;
+    @JoinColumn(name = "id_reserva")
+    private User usuarioReserva;
 
+    // Constructor vacío requerido por JPA
     public Libro() {
     }
 
+    // Constructor completo
     public Libro(String isbn, String titulo, String genero, byte[] imagen, 
                  LocalDate fechaPublicacion, LocalDate limitePrestamo, 
                  List<String> autores, boolean reservado, boolean prestado, User estudiante) {
@@ -53,6 +76,8 @@ private User usuarioReserva;
         this.prestado = prestado;
         this.estudiante = estudiante;
     }
+
+    // --- Getters y Setters ---
 
     public String getIsbn() { return isbn; }
     public void setIsbn(String isbn){this.isbn=isbn;}
@@ -85,5 +110,5 @@ private User usuarioReserva;
     public void setEstudiante(User estudiante) { this.estudiante = estudiante; }
 
     public User getUsuarioReserva() { return usuarioReserva; }
-public void setUsuarioReserva(User usuarioReserva) { this.usuarioReserva = usuarioReserva; }
+    public void setUsuarioReserva(User usuarioReserva) { this.usuarioReserva = usuarioReserva; }
 }
