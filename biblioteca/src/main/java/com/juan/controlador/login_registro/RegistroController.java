@@ -1,6 +1,6 @@
 package com.juan.controlador.login_registro;
 
-import java.net.URL; // Importa solo una vez
+import java.net.URL; 
 import java.util.ResourceBundle;
 import com.juan.dao.DaoBliblioteca;
 import com.juan.dao.DaoBlibliotecaImpl;
@@ -12,8 +12,14 @@ import javafx.scene.input.MouseEvent;
 
 public class RegistroController implements Initializable { 
 
-    @FXML private TextField nombreField, apellidosField, userField, emailField, passwordField, confirmPasswordField;
+    // 1. SEPARAR LOS CAMPOS POR TIPO:
+    @FXML private TextField nombreField, apellidosField, userField, emailField;
+    // ¡CAMBIO AQUÍ!: Declarar estos dos como PasswordField para que coincida con el FXML
+    @FXML private PasswordField passwordField, confirmPasswordField; 
+    
     @FXML private ChoiceBox<String> tipoUserSelect;
+    @FXML private TextField showpassword, showpassword1;
+    @FXML private CheckBox checkContrasena;
 
     private DaoBliblioteca dao = new DaoBlibliotecaImpl();
 
@@ -21,6 +27,25 @@ public class RegistroController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tipoUserSelect.getItems().addAll("Estudiante", "Admin");
         tipoUserSelect.setValue("Estudiante");
+        
+        // 2. ¡AÑADIR ESTO!: Sincronizar el texto entre los campos ocultos y los visibles
+        showpassword1.textProperty().bindBidirectional(passwordField.textProperty());
+        showpassword.textProperty().bindBidirectional(confirmPasswordField.textProperty());
+    }
+
+    @FXML
+    void mostrarPassword(MouseEvent event) {
+        if (checkContrasena.isSelected()) {
+            showpassword1.setVisible(true);
+            showpassword.setVisible(true);
+            passwordField.setVisible(false);
+            confirmPasswordField.setVisible(false);
+        } else {
+            showpassword1.setVisible(false);
+            showpassword.setVisible(false);
+            passwordField.setVisible(true);
+            confirmPasswordField.setVisible(true);
+        }
     }
 
     @FXML

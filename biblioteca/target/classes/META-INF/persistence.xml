@@ -8,8 +8,8 @@
     <persistence-unit name="miUnidadPersistencia" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
-        <class>com.juan.model.libro</class>
-        <class>com.juan.model.user</class>
+        <class>com.juan.model.Libro</class>
+        <class>com.juan.model.User</class>
         
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

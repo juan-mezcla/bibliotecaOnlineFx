@@ -10,8 +10,8 @@ public interface DaoBliblioteca {
     boolean insertarLibro(Libro libro);
     boolean insertarUsuario(User user);
     boolean actualizarLibro(Libro libro);
-
-
+    boolean eliminarLibro(String isbn);
+    boolean alargarPrestamo(String isbn, int dias);
     int comprobarUsuario(String email,String password);
     User seleccionarUser(int idUser);
     Libro seleccionarLibro(String ISBN);

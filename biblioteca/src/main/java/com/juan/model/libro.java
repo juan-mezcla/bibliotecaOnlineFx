@@ -19,9 +19,9 @@ public class Libro {
     private LocalDate fechaPublicacion;
     private LocalDate limitePrestamo;
 
-    @ElementCollection
     @CollectionTable(name = "libro_autores", joinColumns = @JoinColumn(name = "libro_id"))
     @Column(name = "autor")
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> autores;
 
     private boolean reservado;
@@ -30,6 +30,10 @@ public class Libro {
     @ManyToOne
     @JoinColumn(name = "id_estudiante")
     private User estudiante;
+
+    @ManyToOne
+@JoinColumn(name = "id_reserva")
+private User usuarioReserva;
 
     public Libro() {
     }
@@ -51,6 +55,7 @@ public class Libro {
     }
 
     public String getIsbn() { return isbn; }
+    public void setIsbn(String isbn){this.isbn=isbn;}
 
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
@@ -78,4 +83,7 @@ public class Libro {
 
     public User getEstudiante() { return estudiante; }
     public void setEstudiante(User estudiante) { this.estudiante = estudiante; }
+
+    public User getUsuarioReserva() { return usuarioReserva; }
+public void setUsuarioReserva(User usuarioReserva) { this.usuarioReserva = usuarioReserva; }
 }
