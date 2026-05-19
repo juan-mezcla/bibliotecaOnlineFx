@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\estudiante\EstudianteController.java
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\login_registro\LoginController.java
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\admin\AdminController.java
@@ -10,3 +11,17 @@ c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\m
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\module-info.java
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\model\User.java
 c:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\dao\DaoBliblioteca.java
+=======
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\estudiante\EstudianteController.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\login_registro\LoginController.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\admin\AdminController.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\dao\JpaUtil.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\App.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\login_registro\Login_registroController.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\controlador\login_registro\RegistroController.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\dao\DaoBlibliotecaImpl.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\model\Libro.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\module-info.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\model\User.java
+C:\Users\Admin\Desktop\juan practicas\javafx\bibliotecaOnlineFx\biblioteca\src\main\java\com\juan\dao\DaoBliblioteca.java
+>>>>>>> 9f9c7f0e78e44d0e832b95e27a02949f7b2a2df9
