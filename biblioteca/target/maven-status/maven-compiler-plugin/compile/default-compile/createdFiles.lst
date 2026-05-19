@@ -1,0 +1,12 @@
+com\juan\controlador\login_registro\Login_registroController.class
+com\juan\model\Libro.class
+com\juan\model\User.class
+com\juan\controlador\estudiante\EstudianteController.class
+com\juan\dao\JpaUtil.class
+com\juan\dao\DaoBlibliotecaImpl.class
+com\juan\dao\DaoBliblioteca.class
+com\juan\controlador\login_registro\RegistroController.class
+module-info.class
+com\juan\App.class
+com\juan\controlador\admin\AdminController.class
+com\juan\controlador\login_registro\LoginController.class
